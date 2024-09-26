@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 @TeleOp(name="Shrey's Drive Code")
-public class ShreyDriveCode extends LinearOpMode {
+public class MechanumDriveTrain extends LinearOpMode {
     private DcMotor flMotor, frMotor, blMotor, brMotor;
     private float xForce, yForce, yaw, divisor = 0;
 
