@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 @TeleOp(name="Beeline Drive Train")
 public class BeelineDriveTrain extends LinearOpMode {
-    private DcMotor flMotor, frMotor, blMotor, brMotor;
+    private DcMotor flMotor, frMotor;
     private float yForce, yaw = 0;
 
     // Drive code
@@ -15,9 +15,7 @@ public class BeelineDriveTrain extends LinearOpMode {
         yaw = gamepad1.right_stick_x;
 
         flMotor.setPower((yForce));
-        frMotor.setPower((yForce));
-        blMotor.setPower((yForce));
-        brMotor.setPower((yForce));
+        frMotor.setPower((-yForce));
     }
 
     public void runOpMode() throws InterruptedException {
@@ -27,8 +25,6 @@ public class BeelineDriveTrain extends LinearOpMode {
         // Initialization
         flMotor = hardwareMap.get(DcMotor.class, "fl");
         frMotor = hardwareMap.get(DcMotor.class, "fr");
-        blMotor = hardwareMap.get(DcMotor.class, "bl");
-        brMotor = hardwareMap.get(DcMotor.class, "br");
 
         waitForStart();
 
