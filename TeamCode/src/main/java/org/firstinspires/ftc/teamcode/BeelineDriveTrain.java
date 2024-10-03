@@ -14,8 +14,12 @@ public class BeelineDriveTrain extends LinearOpMode {
         yForce = -gamepad1.left_stick_y;
         yaw = gamepad1.right_stick_x;
 
-        flMotor.setPower((yForce));
-        frMotor.setPower((-yForce));
+        // forward/backward
+        flMotor.setPower(yForce);
+        frMotor.setPower(-yForce);
+        // turning
+        flMotor.setPower(-yaw);
+        frMotor.setPower(yaw);
     }
 
     public void runOpMode() throws InterruptedException {
