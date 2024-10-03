@@ -3,11 +3,12 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.Servo;
 
 @TeleOp(name="Mechanum Drive Train")
 public class MechanumDriveTrain extends LinearOpMode {
     private DcMotor flMotor, frMotor, blMotor, brMotor;
-    private float xForce, yForce, yaw, divisor = 0;
+    private float xForce, yForce, yaw, divisor;
 
     // Drive code
     public void drive() {
@@ -17,10 +18,10 @@ public class MechanumDriveTrain extends LinearOpMode {
 
         divisor = Math.max(Math.abs(xForce) + Math.abs(yForce) + Math.abs(yaw), 1);
 
-        flMotor.setPower(( xForce + yForce + yaw) / divisor);
+        flMotor.setPower((xForce + yForce + yaw) / divisor);
         frMotor.setPower((-xForce + yForce - yaw) / divisor);
         blMotor.setPower((-xForce + yForce + yaw) / divisor);
-        brMotor.setPower(( xForce + yForce - yaw) / divisor);
+        brMotor.setPower((xForce + yForce - yaw) / divisor);
     }
 
     public void runOpMode() throws InterruptedException {

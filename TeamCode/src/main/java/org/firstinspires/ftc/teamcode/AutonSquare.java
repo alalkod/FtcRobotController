@@ -46,7 +46,7 @@ public class AutonSquare extends LinearOpMode
             leftMotor.setPower(0.25);
             rightMotor.setPower(0.25);
 
-            sleep(1000); // drive straight for 1 second.
+            sleep(14000); // drive straight for 1 second.
 
             leftMotor.setPower(0.0);
             rightMotor.setPower(0.0);
@@ -55,9 +55,9 @@ public class AutonSquare extends LinearOpMode
 
             // now set motors, one forward one reverse. Should cause the bot to rotate.
 
-            leftMotor.setPower(0.25);
+            leftMotor.setPower(0.5  );
 
-            rightMotor.setPower(-0.25);
+            rightMotor.setPower(-0.5);
 
             sleep(1700); // adjust this delay to get the bot to rotate 90 degrees.
 
